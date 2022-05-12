@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet("/ServicesAPI")
 public class ServicesAPI extends HttpServlet {
+	Request reqObj = new Request();
 	private static final long serialVersionUID = 1L;
        
     /**
@@ -35,7 +36,11 @@ public class ServicesAPI extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		String output = reqObj.insertRequests(request.getParameter("requestType"), 
+				request.getParameter("requestDesc"), 
+				request.getParameter("City"), 
+				request.getParameter("ZipCode")); 
+				response.getWriter().write(output);
 	}
 
 	/**
