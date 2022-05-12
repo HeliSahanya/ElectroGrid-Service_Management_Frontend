@@ -43,7 +43,7 @@ public class Request {
 			// iterate through the rows in the result set
 			while (rs.next()) 
 			{ 
-				String request_id = Integer.toString(rs.getInt("request_id")); 
+				String requestID = Integer.toString(rs.getInt("request_id")); 
 				String service_type = rs.getString("service_type"); 
 				String description = rs.getString("description"); 
 				String city = rs.getString("city"); 
@@ -57,9 +57,9 @@ public class Request {
 				
 				// buttons
 				output += "<td><input name='btnUpdate' type='button' value='Update' "
-						+ "class='btnUpdate btn btn-secondary' data-requestid='" + request_id + "'></td>"
+						+ "class='btnUpdate btn btn-secondary' data-requestid='" + requestID + "'></td>"
 						+ "<td><input name='btnRemove' type='button' value='Remove' "
-						+ "class='btnRemove btn btn-danger' data-requestid='" + request_id + "'></td></tr>"; 
+						+ "class='btnRemove btn btn-danger' data-requestid='" + requestID + "'></td></tr>"; 
 			} 
 			con.close(); 
 			// Complete the html table
@@ -103,8 +103,7 @@ public class Request {
 			preparedStmt.execute();
 			con.close();
 			String newRequests = readRequests(); 
-			output = "{\"status\":\"success\", \"data\": \"" + 
-					newRequests + "\"}"; 	
+			output = "{\"status\":\"success\", \"data\": \"" + newRequests + "\"}"; 	
 		}
 				
 		catch (Exception e)
@@ -146,8 +145,7 @@ public class Request {
 			preparedStmt.execute();
 			con.close();
 			String newRequests = readRequests(); 
-			output = "{\"status\":\"success\", \"data\": \"" + 
-					newRequests + "\"}";
+			output = "{\"status\":\"success\", \"data\": \"" + newRequests + "\"}"; 
 		}
 			
 		catch (Exception e)
@@ -185,8 +183,7 @@ public class Request {
 			preparedStmt.execute();
 			con.close();
 			String newRequests = readRequests(); 
-			output = "{\"status\":\"success\", \"data\": \"" + 
-					newRequests + "\"}";
+			output = "{\"status\":\"success\", \"data\": \"" + newRequests + "\"}";
 		}
 			
 		catch (Exception e)

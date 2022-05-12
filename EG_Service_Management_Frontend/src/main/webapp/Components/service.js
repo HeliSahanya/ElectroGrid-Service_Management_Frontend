@@ -43,7 +43,7 @@ $(document).on("click", "#btnSave", function(event)
 // UPDATE==========================================
 $(document).on("click", ".btnUpdate", function(event) 
 { 
-	$("#hidRequestIDSave").val($(this).data("request_id")); 
+	$("#hidRequestIDSave").val($(this).data("requestid")); 
  	$("#requestType").val($(this).closest("tr").find('td:eq(0)').text()); 
  	$("#requestDesc").val($(this).closest("tr").find('td:eq(1)').text()); 
  	$("#City").val($(this).closest("tr").find('td:eq(2)').text()); 
@@ -55,9 +55,9 @@ $(document).on("click", ".btnRemove", function(event)
 { 
  	$.ajax( 
  	{ 
- 		url : "ServiceAPI", 
+ 		url : "ServicesAPI", 
  		type : "DELETE", 
- 		data : "request_id=" + $(this).data("request_id"),
+ 		data : "requestID=" + $(this).data("requestid"),
  		dataType : "text", 
  		complete : function(response, status) 
  		{ 
