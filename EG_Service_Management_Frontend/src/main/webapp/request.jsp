@@ -49,7 +49,8 @@ if (request.getParameter("hidRequestIDSave") != null)
 	<div class="container">
 		<div class="row">
 			<div class="col-6"> 
-				<h1>Request and Inquiry Management</h1>
+				<h1>Service Management</h1>
+				<h2>Inquiry Management</h2>
 	
 				<form id="formRequest" name="formRequest">
 		 			Service Type: 
@@ -86,8 +87,6 @@ if (request.getParameter("hidRequestIDSave") != null)
 				<%
 					Request reqObj = new Request(); 
 			 		out.print(reqObj.readRequests()); 
-			 		
-			 		
 				%>
 				</div>
 			</div> 

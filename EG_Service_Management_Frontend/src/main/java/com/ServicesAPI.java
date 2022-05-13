@@ -58,7 +58,7 @@ public class ServicesAPI extends HttpServlet {
 		paras.get("requestDesc").toString(), 
 		paras.get("City").toString(), 
 		paras.get("ZipCode").toString()); 
-		response.getWriter().write(output); 
+		response.getWriter().write(output);  
 	}
 
 	private static Map getParasMap(HttpServletRequest request) 
