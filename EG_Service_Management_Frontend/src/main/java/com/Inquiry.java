@@ -45,7 +45,7 @@ public class Inquiry {
 			// iterate through the rows in the result set
 			while (rs.next()) 
 			{ 
-				String Inquiry_id = Integer.toString(rs.getInt("Inquiry_id")); 
+				String inquiryID = Integer.toString(rs.getInt("Inquiry_id")); 
 				String inquiry_type = rs.getString("inquiry_type"); 
 				String customer_type = rs.getString("customer_type"); 
 				String description = rs.getString("description"); 
@@ -54,8 +54,7 @@ public class Inquiry {
 				String address = rs.getString("address"); 
 	 
 				// Add into the html table
-				output += "<tr><td>" + Inquiry_id + "</td>"; 
-				output += "<td>" + inquiry_type + "</td>"; 
+				output += "<tr><td>" + inquiry_type + "</td>"; 
 				output += "<td>" + customer_type + "</td>"; 
 				output += "<td>" + description + "</td>"; 
 				output += "<td>" + branch_code + "</td>"; 
@@ -63,10 +62,10 @@ public class Inquiry {
 				output += "<td>" + address + "</td>"; 
 				
 				// buttons
-				output += "<td><input name='btnUpdate' type='button' value='Update' "
-						+ "class='btnUpdate btn btn-secondary' data-itemid='" + Inquiry_id + "'></td>"
-						+ "<td><input name='btnRemove' type='button' value='Remove' "
-						+ "class='btnRemove btn btn-danger' data-itemid='" + Inquiry_id + "'></td></tr>"; 
+				output += "<td><input name='buttonUpdate' type='button' value='Update' "
+						+ "class='buttonUpdate btn btn-secondary' data-inquiryid='" + inquiryID + "'></td>"
+						+ "<td><input name='buttonRemove' type='button' value='Remove' "
+						+ "class='buttonRemove btn btn-danger' data-inquiryid='" + inquiryID + "'></td></tr>"; 
 			} 
 			con.close(); 
 			// Complete the html table
